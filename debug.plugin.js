@@ -40,7 +40,7 @@ const CONFIG = {
         objectOrArray: "[OBJECT OR ARRAY]",
     },
     suppressedConsoleMethods: ["log", "warn", "error", "info", "debug"],    // Liste der unterdrückten Console-Methoden
-    environmentModes: ["development"],                                      // Beispiel: Nur im "development"-Modus wird die Konsole aktiv
+    environmentModes: ["sd"],                                      // Beispiel: Nur im "development"-Modus wird die Konsole aktiv
 };
 
 let asciiSmileDisplayed = false;
@@ -122,6 +122,7 @@ function isStringable(value) {
         value !== null &&
         value !== undefined &&
         (typeof value === "string" || typeof value.toString === "function") &&
+        typeof value !== "object" &&
         !Array.isArray(value)
     );
 }
